@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #eef2ff;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
+}
+
+.card {
+  width: 92%;
+  max-width: 1200px;
+  background: white;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0px 0px 25px rgba(0,0,0,0.08);
+}
+
+h1 {
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 40px;
+  font-size: 38px;
+}
+
+.sectionTitle {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #2563eb;
+  font-size: 24px;
+  border-left: 6px solid #2563eb;
+  padding-left: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.inputBox {
+  background: #f8fafc;
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid #dbeafe;
+}
+
+.inputBox label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #1e293b;
+  font-size: 16px;
+}
+
+.desc {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border: 2px dashed #93c5fd;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus {
+  border-color: #2563eb;
+}
+
+button {
+  margin-top: 40px;
+  width: 100%;
+  padding: 18px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.message {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: green;
+}
+
+.downloadBox {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.downloadBox a {
+  display: inline-block;
+  text-decoration: none;
+  background: green;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 10px;
+}
