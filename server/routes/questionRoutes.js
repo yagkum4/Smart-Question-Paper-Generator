@@ -824,35 +824,54 @@ router.post(
 
           });
 
+const fileName =
+  `QuestionPaper_Set_${set}.pdf`;
 
 
 
-        const fileName =
-          `QuestionPaper_Set_${set}.pdf`;
+// FULL ABSOLUTE PATH
+
+const outputPath = path.join(
+  __dirname,
+  "../generated",
+  fileName
+);
 
 
 
+// CREATE generated FOLDER IF NOT EXISTS
 
-        const outputPath =
-          path.join(
-            "generated",
-            fileName
-          );
+if (
+  !fs.existsSync(
+    path.join(__dirname, "../generated")
+  )
+) {
 
+  fs.mkdirSync(
 
+    path.join(__dirname, "../generated"),
 
+    { recursive: true }
 
-        const stream =
-          fs.createWriteStream(
-            outputPath
-          );
+  );
 
-
-
-
-        doc.pipe(stream);
+}
 
 
+
+// CREATE STREAM
+
+const writeStream =
+  fs.createWriteStream(outputPath);
+
+
+
+// PIPE PDF
+
+doc.pipe(writeStream);
+
+
+        
 
 
         // TITLE
@@ -1205,13 +1224,23 @@ router.post(
 
 
 
-
-        doc.end();
-
+doc.end();
 
 
 
-        generatedFiles.push(fileName);
+// WAIT UNTIL FILE IS FULLY SAVED
+
+await new Promise((resolve, reject) => {
+
+  writeStream.on("finish", resolve);
+
+  writeStream.on("error", reject);
+
+});
+
+
+
+generatedFiles.push(fileName);
 
       }
 
