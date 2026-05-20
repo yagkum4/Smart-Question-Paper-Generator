@@ -1258,18 +1258,18 @@ generatedFiles.push(fileName);
 
     }
 
-    catch (error) {
+   catch (error) {
 
-      console.log(error);
+  console.log("FULL ERROR => ", error);
 
-      res.status(500).json({
+  res.status(500).json({
 
-        message:
-          "Error generating PDFs"
+    error:
+      error.message
 
-      });
+  });
 
-    }
+}
 
   }
 

@@ -169,9 +169,10 @@ function App() {
 
 
 
-      alert(
-        "Question Papers Generated Successfully"
-      );
+     alert(
+  error?.response?.data?.error ||
+  error.message
+);
 
     }
 
