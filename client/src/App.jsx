@@ -76,35 +76,47 @@ function App() {
 
       // FILES
 
-      formData.append(
-        "section1",
-        section1File
-      );
+      if (section1File) {
+        formData.append(
+          "section1",
+          section1File
+        );
+      }
 
-      formData.append(
-        "section2",
-        section2File
-      );
+      if (section2File) {
+        formData.append(
+          "section2",
+          section2File
+        );
+      }
 
-      formData.append(
-        "section3",
-        section3File
-      );
+      if (section3File) {
+        formData.append(
+          "section3",
+          section3File
+        );
+      }
 
-      formData.append(
-        "section4",
-        section4File
-      );
+      if (section4File) {
+        formData.append(
+          "section4",
+          section4File
+        );
+      }
 
-      formData.append(
-        "section5",
-        section5File
-      );
+      if (section5File) {
+        formData.append(
+          "section5",
+          section5File
+        );
+      }
 
-      formData.append(
-        "section6",
-        section6File
-      );
+      if (section6File) {
+        formData.append(
+          "section6",
+          section6File
+        );
+      }
 
 
 
@@ -169,10 +181,9 @@ function App() {
 
 
 
-     alert(
-  error?.response?.data?.error ||
-  error.message
-);
+      alert(
+        "Question Papers Generated Successfully"
+      );
 
     }
 
@@ -181,8 +192,15 @@ function App() {
       console.log(err);
 
       alert(
+
+        err?.response?.data?.error ||
+
+        err.message ||
+
         "Error generating PDFs"
+
       );
+
     }
 
   };

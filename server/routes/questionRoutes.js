@@ -1258,14 +1258,18 @@ generatedFiles.push(fileName);
 
     }
 
-   catch (error) {
+  catch (error) {
 
   console.log("FULL ERROR => ", error);
 
-  res.status(500).json({
+  return res.status(500).json({
 
     error:
-      error.message
+      error.stack ||
+
+      error.message ||
+
+      "Unknown Error"
 
   });
 
