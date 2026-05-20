@@ -146,7 +146,7 @@ function App() {
 
       const res = await axios.post(
 
-        "http://localhost:5000/api/questions/generate",
+        "https://question-paper-backend-9apn.onrender.com/api/questions/generate",
 
         formData,
 
@@ -571,7 +571,7 @@ function App() {
 
                     <a
 
-                      href={`http://localhost:5000/generated/${file}`}
+                      href={`https://question-paper-backend-9apn.onrender.com/generated/${file}`}
 
                       target="_blank"
 
